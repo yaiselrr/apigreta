@@ -1,0 +1,12 @@
+recuerde que al completar la quincena si no alcansa el minimo de slp la diferencia sera tomada de su parte### Utils commands
+
+Add-Migration <name> -o Data
+Update-Database
+
+dotnet tool install --global dotnet-ef --version 5.0.3
+
+dotnet ef migrations add Initial -p src/Greta.BO.Api -o Data
+dotnet ef database update -p src/Greta.BO.Api
+
+2fa library documentation
+https://github.com/NickyBall/GoogleAuthenticatorService.Core

@@ -1,0 +1,142 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3B216A8F-220D-48B9-A9C9-2B76697D58A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greta.BO.Api.Entities", "src\Greta.BO.Api.Entities\Greta.BO.Api.Entities.csproj", "{1BB27DB6-8ABB-483C-8ACD-1EA19C3587DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greta.BO.Api.Abstractions", "src\Greta.BO.Api.Abstractions\Greta.BO.Api.Abstractions.csproj", "{887AE987-F098-43C3-933A-72D941CB1290}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greta.BO.Api.Sqlserver", "src\Greta.BO.Api.Sqlserver\Greta.BO.Api.Sqlserver.csproj", "{ADCE5162-0873-4DBA-98A4-C14E0D6B4EED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greta.BO.Api", "src\Greta.BO.Api\Greta.BO.Api.csproj", "{CD373186-CB2D-403B-B513-F6794339C2E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{8208F182-AE1D-4F2D-8BAE-98F89489B057}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greta.BO.BusinessLogic", "src\Greta.BO.BusinessLogic\Greta.BO.BusinessLogic.csproj", "{D90757EF-A0DB-4B25-9BC6-764033977310}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{69FEF573-F147-403A-9101-3DEC19B4851B}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\Nuget_deploy.yml = .github\workflows\Nuget_deploy.yml
+		run-local-scanner-sonarqube.ps1 = run-local-scanner-sonarqube.ps1
+		.github\workflows\ci-build.yml = .github\workflows\ci-build.yml
+		.github\workflows\deplydocs.yml = .github\workflows\deplydocs.yml
+		.github\workflows\deploy_develop_broker_image.yml = .github\workflows\deploy_develop_broker_image.yml
+		.github\workflows\deploy_develop_worker_image.yml = .github\workflows\deploy_develop_worker_image.yml
+		.github\workflows\deploy_master_broker_image.yml = .github\workflows\deploy_master_broker_image.yml
+		.github\workflows\deploy_stage_worker_image.yml = .github\workflows\deploy_stage_worker_image.yml
+		.github\workflows\deploy_stage_broker_image.yml = .github\workflows\deploy_stage_broker_image.yml
+		.github\workflows\deploy_master_worker_image.yml = .github\workflows\deploy_master_worker_image.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{01E07803-3DEA-413D-AB55-E097DB2D2C4B}"
+	ProjectSection(SolutionItems) = preProject
+		captain-definition = captain-definition
+		Dockerfile = Dockerfile
+		DockerfileWorker = DockerfileWorker
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greta.BO.Api.EventContracts", "src\Greta.BO.Api.EventContracts\Greta.BO.Api.EventContracts.csproj", "{1E130584-958A-4222-94FE-F194D8E8A005}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greta.BO.Api.MassTransit", "src\Greta.BO.Api.MassTransit\Greta.BO.Api.MassTransit.csproj", "{5C506061-273F-4A56-9C82-EFC686EAE8C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greta.BO.Worker", "src\Greta.BO.Worker\Greta.BO.Worker.csproj", "{0494BB91-88F0-4887-B521-9C7AF73A9CDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C5DA071A-C7ED-4344-A1D0-D483491DC8AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k6test", "k6test", "{F1B42694-1C86-4C2A-B70F-BDE4C3A2E7C6}"
+	ProjectSection(SolutionItems) = preProject
+		k6test\load.js = k6test\load.js
+		k6test\stress.js = k6test\stress.js
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greta.BO.Api.Test", "tests\Greta.BO.Api.Test\Greta.BO.Api.Test.csproj", "{67272B88-78C5-458F-B8AE-253AE6EE40B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greta.BO.Wix", "src\Greta.BO.Wix\Greta.BO.Wix.csproj", "{C648BE5F-FAB6-46B0-B2C7-B57EC745A47D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greta.BO.EasyLabel", "src\Greta.BO.EasyLabel\Greta.BO.EasyLabel.csproj", "{B9AC1D5E-CFBE-4913-8576-8FD6CBD8CED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "tests\Console\Console.csproj", "{47FB0472-E28F-449F-A289-89D79F46521A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BB27DB6-8ABB-483C-8ACD-1EA19C3587DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BB27DB6-8ABB-483C-8ACD-1EA19C3587DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BB27DB6-8ABB-483C-8ACD-1EA19C3587DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB27DB6-8ABB-483C-8ACD-1EA19C3587DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{887AE987-F098-43C3-933A-72D941CB1290}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887AE987-F098-43C3-933A-72D941CB1290}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887AE987-F098-43C3-933A-72D941CB1290}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887AE987-F098-43C3-933A-72D941CB1290}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADCE5162-0873-4DBA-98A4-C14E0D6B4EED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADCE5162-0873-4DBA-98A4-C14E0D6B4EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADCE5162-0873-4DBA-98A4-C14E0D6B4EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADCE5162-0873-4DBA-98A4-C14E0D6B4EED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD373186-CB2D-403B-B513-F6794339C2E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD373186-CB2D-403B-B513-F6794339C2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD373186-CB2D-403B-B513-F6794339C2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD373186-CB2D-403B-B513-F6794339C2E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D90757EF-A0DB-4B25-9BC6-764033977310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D90757EF-A0DB-4B25-9BC6-764033977310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D90757EF-A0DB-4B25-9BC6-764033977310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D90757EF-A0DB-4B25-9BC6-764033977310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E130584-958A-4222-94FE-F194D8E8A005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E130584-958A-4222-94FE-F194D8E8A005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E130584-958A-4222-94FE-F194D8E8A005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E130584-958A-4222-94FE-F194D8E8A005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C506061-273F-4A56-9C82-EFC686EAE8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C506061-273F-4A56-9C82-EFC686EAE8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C506061-273F-4A56-9C82-EFC686EAE8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C506061-273F-4A56-9C82-EFC686EAE8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0494BB91-88F0-4887-B521-9C7AF73A9CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0494BB91-88F0-4887-B521-9C7AF73A9CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0494BB91-88F0-4887-B521-9C7AF73A9CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0494BB91-88F0-4887-B521-9C7AF73A9CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67272B88-78C5-458F-B8AE-253AE6EE40B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67272B88-78C5-458F-B8AE-253AE6EE40B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67272B88-78C5-458F-B8AE-253AE6EE40B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67272B88-78C5-458F-B8AE-253AE6EE40B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C648BE5F-FAB6-46B0-B2C7-B57EC745A47D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C648BE5F-FAB6-46B0-B2C7-B57EC745A47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C648BE5F-FAB6-46B0-B2C7-B57EC745A47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C648BE5F-FAB6-46B0-B2C7-B57EC745A47D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9AC1D5E-CFBE-4913-8576-8FD6CBD8CED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9AC1D5E-CFBE-4913-8576-8FD6CBD8CED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9AC1D5E-CFBE-4913-8576-8FD6CBD8CED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9AC1D5E-CFBE-4913-8576-8FD6CBD8CED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47FB0472-E28F-449F-A289-89D79F46521A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47FB0472-E28F-449F-A289-89D79F46521A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47FB0472-E28F-449F-A289-89D79F46521A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47FB0472-E28F-449F-A289-89D79F46521A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1BB27DB6-8ABB-483C-8ACD-1EA19C3587DA} = {3B216A8F-220D-48B9-A9C9-2B76697D58A8}
+		{887AE987-F098-43C3-933A-72D941CB1290} = {3B216A8F-220D-48B9-A9C9-2B76697D58A8}
+		{ADCE5162-0873-4DBA-98A4-C14E0D6B4EED} = {3B216A8F-220D-48B9-A9C9-2B76697D58A8}
+		{CD373186-CB2D-403B-B513-F6794339C2E1} = {3B216A8F-220D-48B9-A9C9-2B76697D58A8}
+		{D90757EF-A0DB-4B25-9BC6-764033977310} = {3B216A8F-220D-48B9-A9C9-2B76697D58A8}
+		{1E130584-958A-4222-94FE-F194D8E8A005} = {3B216A8F-220D-48B9-A9C9-2B76697D58A8}
+		{5C506061-273F-4A56-9C82-EFC686EAE8C9} = {3B216A8F-220D-48B9-A9C9-2B76697D58A8}
+		{0494BB91-88F0-4887-B521-9C7AF73A9CDD} = {3B216A8F-220D-48B9-A9C9-2B76697D58A8}
+		{67272B88-78C5-458F-B8AE-253AE6EE40B5} = {C5DA071A-C7ED-4344-A1D0-D483491DC8AD}
+		{C648BE5F-FAB6-46B0-B2C7-B57EC745A47D} = {3B216A8F-220D-48B9-A9C9-2B76697D58A8}
+		{B9AC1D5E-CFBE-4913-8576-8FD6CBD8CED2} = {3B216A8F-220D-48B9-A9C9-2B76697D58A8}
+		{47FB0472-E28F-449F-A289-89D79F46521A} = {C5DA071A-C7ED-4344-A1D0-D483491DC8AD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3427FC20-60F5-4646-AEA3-4397AA9542EC}
+	EndGlobalSection
+EndGlobal

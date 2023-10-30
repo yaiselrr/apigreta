@@ -1,0 +1,50 @@
+name: Deploy Broker to develop
+
+on:
+  push:
+    branches: [ develop, wixstore ]
+#   pull_request:
+#     branches: [ master ]
+
+  workflow_dispatch:
+
+env:
+  REGISTRY: "registry.digitalocean.com/gretasms"
+  IMAGE_NAME_BO: "bo_api_dev"
+  DOCKERFILE_BO: "Dockerfile"
+  DEPLOYURL: https://corporateapi.gretatest.com/api/DockerImageVersion/ExternalPost
+  DOTNET_NOLOGO: true                     # Disable the .NET logo in the console output
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true # Disable the .NET first time experience to skip caching NuGet packages and speed up the build
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v3.3.0
+        
+      - name: Install doctl 
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Log in to DO Container Registry 
+        run: doctl registry login --expiry-seconds 600
+
+      - uses: chenryhabana205/dotnetgetversion@v6
+        id: getversion
+        with:
+          VERSION_FILE_PATH: src/Greta.BO.Api/Greta.BO.Api.csproj
+
+      - name: Build container image broker
+        run: docker build -f $(echo $DOCKERFILE_BO) --build-arg NEXUSUSERNAME=${{ secrets.NEXUSUSERNAME }} --build-arg NEXUSPASSWORD=${{ secrets.NEXUSPASSWORD }} -t $(echo $REGISTRY)/$(echo $IMAGE_NAME_BO):${{ steps.getversion.outputs.TAG }}.$(echo $GITHUB_SHA ) .
+
+      - name: Push image to DigitalOcean Container Registry broker
+        run: docker push $(echo $REGISTRY)/$(echo $IMAGE_NAME_BO):${{ steps.getversion.outputs.TAG }}.$(echo $GITHUB_SHA )
+
+      - name: Notify to corporate new broker
+        shell: bash
+        run: |
+          curl "${{ env.DEPLOYURL }}" -H "ApiKey:${{ secrets.CORPORATEAPIKEY }}" -F "Type=0" -F "Name=${{ env.TAG }}" 
+        env:
+          TAG: ${{ steps.getversion.outputs.TAG }}.${{ github.sha }}

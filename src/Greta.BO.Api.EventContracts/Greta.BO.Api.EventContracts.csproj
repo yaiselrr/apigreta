@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ProjectGuid>1e130584-958a-4222-94fe-f194d8e8a005</ProjectGuid>
+        <TargetFramework>net7.0</TargetFramework>
+        <Description>This library contains the interfaces for MassTransit Contracts.</Description>
+        <RepositoryType>Git</RepositoryType>
+        <RepositoryUrl>https://github.com/JourneyTech023/Greta.BO.Api.git</RepositoryUrl>
+        <PackageTags>POS Greta Corporate EventContracts</PackageTags>
+        <Copyright>© Journey. All rights reserved.</Copyright>
+        <Version>1.0.0.22</Version>
+    </PropertyGroup>
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Greta.Sdk.MassTransit" Version="2.0.0.4" />
+    </ItemGroup>
+</Project>

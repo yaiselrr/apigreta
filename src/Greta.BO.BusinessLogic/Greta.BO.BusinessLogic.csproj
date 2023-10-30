@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>d90757ef-a0db-4b25-9bc6-764033977310</ProjectGuid>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DocumentationFile>..\..\docs\CSharpDocs\Greta.BO.BusinessLogic.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="CsvHelper" Version="30.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="Greta.Corporate.Api.EventContracts" Version="1.0.2.29" />
+    <PackageReference Include="Greta.Identity.Api.EventContracts" Version="1.0.25" />
+    <PackageReference Include="Greta.Report.SPA.EventContracts" Version="1.0.9" />
+    <PackageReference Include="Greta.Sdk.ExternalScale" Version="1.0.3" />
+
+    <PackageReference Include="Greta.Sender.Masstransit.Helper" Version="1.0.0.21" />
+    <PackageReference Include="Greta.Sdk.FileStorage" Version="1.0.0.8" />
+    <PackageReference Include="Greta.Sdk.Printing" Version="1.0.8" />
+    
+    <PackageReference Include="Greta.Sdk.Hangfire.MediatR" Version="1.0.0.6" />
+    <PackageReference Include="Greta.Sdk.HubClient" Version="1.0.0.10" />
+
+    <PackageReference Include="LinqConditionalExtensions" Version="1.3.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Moq" Version="4.18.4" />
+    <PackageReference Include="Scrutor" Version="4.2.2" />
+    <PackageReference Include="LanguageExt.Core" Version="4.4.3" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="SignalRSwaggerGen" Version="4.4.0" />
+	<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Greta.BO.Api.Abstractions\Greta.BO.Api.Abstractions.csproj" />
+    <ProjectReference Include="..\Greta.BO.Api.Sqlserver\Greta.BO.Api.Sqlserver.csproj" />
+    <ProjectReference Include="..\Greta.BO.Wix\Greta.BO.Wix.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Specifications\ProductSpecs\" />
+  </ItemGroup>
+</Project>

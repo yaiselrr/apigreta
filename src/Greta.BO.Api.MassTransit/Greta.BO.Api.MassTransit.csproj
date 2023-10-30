@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+		<PackageReference Include="LinqConditionalExtensions" Version="1.3.0" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\Greta.BO.Api.Abstractions\Greta.BO.Api.Abstractions.csproj" />
+		<ProjectReference Include="..\Greta.BO.Api.Entities\Greta.BO.Api.Entities.csproj" />
+		<ProjectReference Include="..\Greta.BO.Api.EventContracts\Greta.BO.Api.EventContracts.csproj" />
+		<ProjectReference Include="..\Greta.BO.BusinessLogic\Greta.BO.BusinessLogic.csproj" />
+	</ItemGroup>
+
+</Project>

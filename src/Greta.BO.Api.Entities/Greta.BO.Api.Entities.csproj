@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <ProjectGuid>1bb27db6-8abb-483c-8acd-1ea19c3587da</ProjectGuid>
+        <Description>This library contains the entity for Bo Api.</Description>
+        <RepositoryType>Git</RepositoryType>
+        <RepositoryUrl>https://github.com/JourneyTech023/Greta.BO.Api.git</RepositoryUrl>
+        <PackageTags>Greta BO Api</PackageTags>
+        <Copyright>© Journey. All rights reserved.</Copyright>
+        <Version>1.0.1.11</Version>
+        <TargetFramework>net7.0</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute" />
+    </ItemGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <DocumentationFile>..\..\docs\CSharpDocs\Greta.BO.Api.Entities.xml</DocumentationFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Greta.Sdk.Core" Version="2.0.0.2" />
+        <PackageReference Include="Greta.Sdk.EFCore" Version="2.0.0.10" />
+        <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Events\Internal\" />
+    </ItemGroup>
+</Project>

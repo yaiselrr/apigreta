@@ -1,0 +1,112 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <ProjectGuid>cd373186-cb2d-403b-b513-f6794339c2e1</ProjectGuid>
+        <TargetFramework>net7.0</TargetFramework>
+        <Version>1.3.8.2-wix</Version>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <DockerfileContext>..\..\Greta.BO.Abstractions</DockerfileContext>
+        <ServerGarbageCollection>false</ServerGarbageCollection>
+    </PropertyGroup>
+    <ItemGroup>
+        <RuntimeHostConfigurationOption Include="System.Drawing.EnableUnixSupport" Value="true" />
+    </ItemGroup>
+    <PropertyGroup>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    </PropertyGroup>
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+        <UserSecretsId>b2a1543f-76b6-4059-80e4-62fe85545b24</UserSecretsId>
+        <StartupObject>Greta.BO.Api.Program</StartupObject>
+    </PropertyGroup>
+    <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+        <ItemGroup>
+            <_CustomFiles Include="..\..\automation\commit-msg" />
+        </ItemGroup>
+        <Copy SourceFiles="@(_CustomFiles)" DestinationFolder="./../../.git/hooks" />
+    </Target>
+    <ItemGroup>
+        <!--	  <PackageReference Include="BinaryKits.Zpl.Viewer" Version="1.1.5" />-->
+        <!--	  <PackageReference Include="Elastic.Apm.NetCoreAll" Version="1.22.0" />-->
+        <!--	  <PackageReference Include="Elastic.Apm.SerilogEnricher" Version="8.6.0" />-->
+        <PackageReference Include="Ardalis.ApiEndpoints" Version="4.1.0" />
+        <!--	  <PackageReference Include="Asp.Versioning.Http" Version="6.4.0" />-->
+        <!--	  <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="6.4.0" />-->
+        <PackageReference Include="Elastic.CommonSchema.Serilog" Version="8.6.0" />
+        <PackageReference Include="MassTransit.Abstractions" Version="8.0.15" />
+        <!--	  <PackageReference Include="ElasticApm.Messaging.MassTransit" Version="2.0.0-preview.6" />-->
+        <!--	  <PackageReference Include="ElasticApm.MediatR" Version="0.2.0" />-->
+        <!--	  <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="7.0.5" />-->
+        <!--	  <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.4.0" />-->
+        <!--	  <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.4.0" />-->
+        <!--	  <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.4.0" />-->
+        <!--	  <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc9.14" />-->
+        <!--	  <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc9.14" />-->
+        <!--	  <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.0.0" />-->
+        <PackageReference Include="prometheus-net" Version="8.0.0" />
+        <PackageReference Include="prometheus-net.AspNetCore" Version="8.0.0" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+        <PackageReference Include="FluentValidation" Version="11.5.2" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
+        <PackageReference Include="LanguageExt.Core" Version="4.4.3" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.5" />
+
+        <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
+        <PackageReference Include="Microsoft.AspNetCore.Rewrite" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="7.0.0">
+            <GeneratePathProperty>true</GeneratePathProperty>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="7.0.0" />
+
+        <PackageReference Include="Scrutor" Version="4.2.2" />
+        <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+        <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+        <PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
+        <PackageReference Include="Serilog.Exceptions.EntityFrameworkCore" Version="8.4.0" />
+        <PackageReference Include="Serilog.Expressions" Version="3.4.1" />
+        <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="9.0.1" />
+        <PackageReference Include="SerilogTimings" Version="3.0.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" Version="6.0.2" />
+        <PackageReference Include="DotNetEnv" Version="2.5.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.5" />
+        <!--    <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="5.0.3" />-->
+
+        <PackageReference Include="Hangfire.PostgreSql" Version="1.19.12" />
+        <PackageReference Include="Hangfire.PostgreSql.NetCore" Version="1.4.3" />
+        <!--    <PackageReference Include="Npgsql" Version="6.0.1" />-->
+
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
+
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
+
+        <PackageReference Include="Yarp.ReverseProxy" Version="2.0.1" />
+        
+        <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.5" />
+        <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="6.0.3" />
+        <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="7.0.5" />
+
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Greta.BO.Api.EventContracts\Greta.BO.Api.EventContracts.csproj" />
+        <ProjectReference Include="..\Greta.BO.Api.MassTransit\Greta.BO.Api.MassTransit.csproj" />
+        <ProjectReference Include="..\Greta.BO.Api.Sqlserver\Greta.BO.Api.Sqlserver.csproj" />
+        <ProjectReference Include="..\Greta.BO.BusinessLogic\Greta.BO.BusinessLogic.csproj" />
+        <ProjectReference Include="..\Greta.BO.Wix\Greta.BO.Wix.csproj" />
+        <!-- <ProjectReference Include="..\..\..\Greta.Sdk.FileStorage\src\Greta.Sdk.FileStorage\Greta.Sdk.FileStorage.csproj"/> -->
+    </ItemGroup>
+</Project>

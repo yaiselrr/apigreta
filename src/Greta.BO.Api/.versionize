@@ -1,0 +1,38 @@
+{
+  "changelogAll": false,
+  "changelog": {
+    "header": "Greta sms Back office Api",
+    "sections": [
+      {
+        "type": "feat",
+        "section": "✨ Features",
+        "hidden": false
+      },
+      {
+        "type": "fix",
+        "section": "🐛 Bug Fixes",
+        "hidden": false
+      },
+      {
+        "type": "perf",
+        "section": "🚀 Performance",
+        "hidden": false
+      },
+      {
+        "type": "docs",
+        "section": "📜 Documentation",
+        "hidden": false
+      },
+      {
+        "type": "scripts",
+        "section": "⏳ Scripts",
+        "hidden": true
+      },
+      {
+        "type": "chore",
+        "section": "🦦 Others",
+        "hidden": true
+      }
+    ]
+  }
+}

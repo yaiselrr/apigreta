@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Greta.BO.Api.Abstractions\Greta.BO.Api.Abstractions.csproj"/>
+    <ProjectReference Include="..\..\src\Greta.BO.Api.Sqlserver\Greta.BO.Api.Sqlserver.csproj"/>
+    <ProjectReference Include="..\..\src\Greta.BO.Synchro.Entities\Greta.BO.Synchro.Entities.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Mime" Version="3.0.1" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.21.1" />
+  </ItemGroup>
+</Project>

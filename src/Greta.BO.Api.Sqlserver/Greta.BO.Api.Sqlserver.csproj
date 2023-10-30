@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <ProjectGuid>adce5162-0873-4dba-98a4-c14e0d6b4eed</ProjectGuid>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute" />
+    </ItemGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <DocumentationFile>..\..\docs\CSharpDocs\Greta.BO.Api.SqlServer.xml</DocumentationFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Greta.BO.Api.Abstractions\Greta.BO.Api.Abstractions.csproj" />
+        <ProjectReference Include="..\Greta.BO.Api.Entities\Greta.BO.Api.Entities.csproj" />
+    </ItemGroup>
+</Project>

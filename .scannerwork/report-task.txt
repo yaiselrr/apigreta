@@ -1,0 +1,6 @@
+projectKey=Greta.BO
+serverUrl=http://localhost:9001
+serverVersion=9.3.0.51899
+dashboardUrl=http://localhost:9001/dashboard?id=Greta.BO
+ceTaskId=AYjcwU7BMWcfKNhQqBhk
+ceTaskUrl=http://localhost:9001/api/ce/task?id=AYjcwU7BMWcfKNhQqBhk

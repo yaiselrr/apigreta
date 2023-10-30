@@ -1,0 +1,45 @@
+name: Deploy nugets
+
+env:
+  NEXUSURL: https://nexus.gretatest.com/repository/nuget-hosted/
+
+on:
+  push:
+    branches: [develop]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2019
+
+    steps:
+      - uses: actions/checkout@v3.3.0
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3.0.3
+        with:
+          dotnet-version: 7
+
+      - name: Update nuget sources
+        run: dotnet nuget add source ${{ env.NEXUSURL }} --name Nexus -u ${{ secrets.NEXUSUSERNAME }} -p ${{ secrets.NEXUSPASSWORD }} --store-password-in-clear-text
+      
+      - name: publish on version change Greta.BO.Api.Entities
+        id: publish_nuget1
+        uses: chenryhabana205/publish-nuget@v8
+        with:
+          PROJECT_FILE_PATH: src/Greta.BO.Api.Entities/Greta.BO.Api.Entities.csproj
+          PACKAGE_NAME: Greta.BO.Api.Entities
+          TAG_COMMIT: false
+          NUGET_KEY: ${{ secrets.NUGETKEY}}
+          NUGET_SOURCE: ${{ env.NEXUSURL }}
+
+      - name: publish on version change Greta.BO.Api.EventContracts
+        id: publish_nuget2
+        uses: chenryhabana205/publish-nuget@v8
+        with:
+          PROJECT_FILE_PATH: src/Greta.BO.Api.EventContracts/Greta.BO.Api.EventContracts.csproj
+          PACKAGE_NAME: Greta.BO.Api.EventContracts
+          TAG_COMMIT: false
+          NUGET_KEY: ${{ secrets.NUGETKEY}}
+          NUGET_SOURCE: ${{ env.NEXUSURL }}
